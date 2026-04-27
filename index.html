@@ -48,15 +48,11 @@
     background: linear-gradient(to bottom, rgba(10,10,9,0.95), transparent);
     backdrop-filter: blur(4px);
   }
-  .nav-logo {
-    font-family: var(--serif);
-    font-size: 1.1rem;
-    font-weight: 300;
-    letter-spacing: 0.15em;
-    color: var(--text);
-    text-decoration: none;
+  .nav-logo img {
+    height: 32px; /* Adjusted for luxury feel */
+    width: auto;
+    display: block;
   }
-  .nav-logo span { color: var(--gold); }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
   .nav-links a {
     font-size: 0.75rem;
@@ -219,6 +215,33 @@
   }
   .section-title em { font-style: italic; color: var(--gold); }
 
+  /* ── SHOWREEL ── */
+  .reel-container {
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 4rem; 
+    align-items: center; 
+    max-width: 1200px; 
+    margin: 0 auto;
+  }
+  .reel-text { flex: 1; min-width: 300px; }
+  .reel-video-box { 
+    flex: 1; 
+    min-width: 300px; 
+    display: flex; 
+    justify-content: center; 
+  }
+  .vimeo-vertical-wrap {
+    width: 100%; 
+    max-width: 340px; 
+    position: relative; 
+    padding-bottom: 177.78%; /* Correct 9:16 aspect ratio */
+    border-radius: 8px; 
+    overflow: hidden; 
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    border: 0.5px solid var(--border);
+  }
+
   /* ── ABOUT ── */
   .about { background: var(--bg2); }
   .about-grid {
@@ -363,255 +386,6 @@
   }
   .turnaround span { color: var(--gold); }
 
-  /* ── SCOPE ── */
-  .scope { background: var(--bg2); }
-  .scope-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    margin-top: 4rem;
-  }
-  .scope-item {
-    border-top: 0.5px solid var(--border);
-    padding-top: 2rem;
-  }
-  .scope-num {
-    font-family: var(--serif);
-    font-size: 3.5rem;
-    font-weight: 300;
-    color: var(--text-dim);
-    line-height: 1;
-    margin-bottom: 1rem;
-  }
-  .scope-title {
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-  }
-  .scope-body {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    line-height: 1.8;
-  }
-
-  /* ── TOOLS ── */
-  .tools-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-top: 3rem;
-  }
-  .tool-tag {
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-muted);
-    border: 0.5px solid var(--border);
-    padding: 0.7rem 1.5rem;
-    transition: all 0.3s;
-  }
-  .tool-tag:hover { border-color: var(--gold); color: var(--gold); }
-
-  /* ── PROCESS ── */
-  .process { background: var(--bg2); }
-  .process-steps {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    margin-top: 4rem;
-    position: relative;
-  }
-  .process-steps::before {
-    content: '';
-    position: absolute;
-    top: 1.2rem; left: 0; right: 0;
-    height: 0.5px;
-    background: var(--border);
-  }
-  .process-step { padding: 0 2.5rem 0 0; }
-  .process-step:last-child { padding-right: 0; }
-  .step-dot {
-    width: 10px; height: 10px;
-    border-radius: 50%;
-    background: var(--gold);
-    margin-bottom: 2rem;
-    position: relative;
-    z-index: 1;
-  }
-  .step-num {
-    font-family: var(--serif);
-    font-size: 0.75rem;
-    color: var(--text-dim);
-    margin-bottom: 0.5rem;
-  }
-  .step-title {
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    font-weight: 300;
-    color: var(--text);
-    margin-bottom: 1rem;
-  }
-  .step-body {
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    line-height: 1.8;
-  }
-
-  /* ── CTA ── */
-  .cta-section {
-    text-align: center;
-    padding: 8rem 4rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-section::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(138,154,91,0.08) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .cta-eyebrow {
-    font-size: 0.65rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 2rem;
-  }
-  .cta-title {
-    font-family: var(--serif);
-    font-size: clamp(2.5rem, 6vw, 5.5rem);
-    font-weight: 300;
-    line-height: 1.05;
-    margin-bottom: 1.5rem;
-  }
-  .cta-title em { font-style: italic; color: var(--gold); }
-  .cta-sub {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    margin-bottom: 3rem;
-    max-width: 420px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .cta-actions {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin-bottom: 3rem;
-  }
-  .cta-contact {
-    display: flex;
-    gap: 3rem;
-    justify-content: center;
-    padding-top: 3rem;
-    border-top: 0.5px solid var(--border);
-    flex-wrap: wrap;
-  }
-  .contact-item a {
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    text-decoration: none;
-    letter-spacing: 0.05em;
-    transition: color 0.3s;
-  }
-  .contact-item a:hover { color: var(--gold); }
-  .contact-label {
-    font-size: 0.6rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    margin-bottom: 0.4rem;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    padding: 2rem 4rem;
-    border-top: 0.5px solid var(--border);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--bg);
-  }
-  .footer-logo {
-    font-family: var(--serif);
-    font-size: 1rem;
-    font-weight: 300;
-    letter-spacing: 0.15em;
-    color: var(--text-muted);
-  }
-  .footer-logo span { color: var(--gold); }
-  .footer-right {
-    font-size: 0.7rem;
-    color: var(--text-dim);
-    letter-spacing: 0.08em;
-  }
-
-  /* ── SHOWREEL ── */
-  .reel-wrap {
-    position: relative;
-    width: 100%;
-    border-radius: 4px;
-    overflow: hidden;
-    border: 0.5px solid var(--border);
-  }
-  .video-placeholder {
-    width: 100%;
-    padding-bottom: 56.25%;
-    position: relative;
-    background: var(--bg2);
-  }
-  .vp-inner {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: .75rem;
-  }
-  .vp-icon {
-    width: 60px; height: 60px;
-    border-radius: 50%;
-    border: 0.5px solid var(--gold);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 20px;
-    color: var(--gold);
-    margin-bottom: .5rem;
-  }
-  .vp-label {
-    font-family: var(--serif);
-    font-size: 1.4rem;
-    font-weight: 300;
-    color: var(--text);
-    letter-spacing: .05em;
-  }
-  .vp-sub {
-    font-size: .75rem;
-    color: var(--text-muted);
-    letter-spacing: .05em;
-  }
-  .vp-code {
-    font-size: .65rem;
-    font-family: monospace;
-    color: var(--gold);
-    background: rgba(138,154,91,.08);
-    border: 0.5px solid rgba(138,154,91,.2);
-    padding: .4rem .9rem;
-    border-radius: 3px;
-    margin-top: .5rem;
-  }
-  .reel-wrap iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-
   /* ── BEFORE / AFTER ── */
   .ba-grid {
     display: grid;
@@ -687,7 +461,6 @@
   .gallery-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto;
     gap: 1px;
     background: var(--border);
     border-radius: 4px;
@@ -696,50 +469,104 @@
   .gallery-item {
     position: relative;
     background: var(--bg2);
-    overflow: hidden;
   }
-  .gallery-item .img-placeholder,
-  .gallery-item img {
+  .gallery-item .gal-placeholder {
+    width: 100%;
+    padding-bottom: 75%;
     position: relative;
-    width: 100%;
-    padding-bottom: 75%;
-    display: block;
   }
-  .gallery-item img {
-    position: absolute;
-    inset: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .gallery-item .img-placeholder { position: relative; }
-  .gal-placeholder {
-    position: relative !important;
-    inset: auto !important;
-    padding-bottom: 75%;
-  }
-  .gal-placeholder .img-placeholder-label,
-  .gal-placeholder .img-placeholder-sub {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  .gal-placeholder .img-placeholder-label { top: calc(50% - 16px); white-space: nowrap; }
-  .gal-placeholder .img-placeholder-sub { top: calc(50% + 6px); white-space: nowrap; }
-  .gallery-item.tall { grid-row: span 2; }
   .gallery-item.tall .gal-placeholder { padding-bottom: 151%; }
 
-  @media (max-width: 900px) {
-    .ba-grid { grid-template-columns: 1fr; }
-    .ba-divider { width: 100%; height: 1px; }
-    .gallery-grid { grid-template-columns: 1fr 1fr; }
-    .gallery-item.tall { grid-row: span 1; }
-    .gallery-item.tall .gal-placeholder { padding-bottom: 75%; }
-    section#reel { padding: 0; }
-    section#reel > div { padding: 4rem 2rem 2rem; }
-    section#reel > div + div { padding: 0 2rem 4rem; }
-    section#work, section#gallery { padding: 4rem 2rem; }
+  /* ── PROCESS ── */
+  .process { background: var(--bg2); }
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 4rem;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 1.2rem; left: 0; right: 0;
+    height: 0.5px;
+    background: var(--border);
+  }
+  .process-step { padding: 0 2.5rem 0 0; }
+  .step-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--gold);
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  .step-title {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+  .step-body {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    text-align: center;
+    padding: 8rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 50% 60% at 50% 50%, rgba(138,154,91,0.08) 0%, transparent 70%);
+  }
+  .cta-title {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+  .cta-title em { font-style: italic; color: var(--gold); }
+  .cta-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+  .cta-contact {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    padding-top: 3rem;
+    border-top: 0.5px solid var(--border);
+    flex-wrap: wrap;
+  }
+  .contact-item a {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  .contact-item a:hover { color: var(--gold); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 2rem 4rem;
+    border-top: 0.5px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--bg);
   }
 
   /* ── ANIMATIONS ── */
@@ -774,12 +601,13 @@
     .hero { padding: 7rem 2rem 4rem; }
     .about-grid { grid-template-columns: 1fr; gap: 3rem; }
     .services-grid { grid-template-columns: 1fr; }
-    .scope-grid { grid-template-columns: 1fr; }
     .process-steps { grid-template-columns: 1fr; gap: 2rem; }
     .process-steps::before { display: none; }
     .hero-number { display: none; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
-    .cta-section { padding: 5rem 2rem; }
+    .ba-grid { grid-template-columns: 1fr; }
+    .ba-divider { width: 100%; height: 1px; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
 </head>
@@ -787,8 +615,8 @@
 
 <nav>
   <a href="#" class="nav-logo">
-  <img src="logo.png" alt="Janloyd Visual Logo" style="height: 40px; width: auto; display: block;">
-</a>
+    <img src="logo.png" alt="Janloyd Visual">
+  </a>
   <ul class="nav-links">
     <li><a href="#reel">Showreel</a></li>
     <li><a href="#work">Work</a></li>
@@ -821,45 +649,50 @@
   <div class="hero-number" aria-hidden="true">JV</div>
 </section>
 
-<section id="reel" style="padding:0;background:#0d0e0c">
-  <div style="padding:5rem 4rem 2rem">
+<section id="reel" style="padding: 5rem 0; background: var(--bg);">
+  <div style="padding: 0 4rem 2rem;">
     <div class="section-label">Showreel</div>
     <h2 class="section-title">See the <em>Craft</em></h2>
   </div>
- <div style="padding: 0 4rem 5rem;">
-    <div class="reveal" style="display: flex; flex-wrap: wrap; gap: 4rem; align-items: center; max-width: 1100px; margin: 0 auto;">
-      
-      <div style="flex: 1; min-width: 300px;">
+  
+  <div style="padding: 0 4rem;">
+    <div class="reveal reel-container">
+      <div class="reel-text">
         <h3 style="font-family: var(--serif); font-size: 2.2rem; font-weight: 300; margin-bottom: 1.5rem; color: var(--text); line-height: 1.2;">
           The Antidote to <br><em style="color: var(--gold); font-style: italic;">Visual Noise.</em>
         </h3>
         <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8; margin-bottom: 1.5rem;">
-          Flashy transitions, dizzying speed ramps, and heavy effects distract from the property. In high-ticket real estate, the listing must be the hero—not the video editor.
+          In high-ticket real estate, the listing must be the hero—not the video editor. Flashy transitions and dizzying speed ramps distract from the sanctuary of the space.
         </p>
         <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.8;">
-          We engineer a "Quiet Luxury" visual experience. Through deliberate pacing, invisible edits, and architectural color grading, we allow potential buyers to truly feel the weight and sanctuary of the space.
+          I engineer a "Quiet Luxury" visual experience. Through deliberate pacing, invisible edits, and architectural color grading, I allow potential buyers to truly feel the weight and tranquility of the property.
         </p>
       </div>
 
-     <div style="flex: 1; min-width: 300px; display: flex; justify-content: center;">
-        <div style="width: 100%; max-width: 340px; position: relative; padding-bottom: 125%; border-radius: 4px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
-          <iframe src="https://player.vimeo.com/video/1185096105?title=0&byline=0&portrait=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      <div class="reel-video-box">
+        <div class="vimeo-vertical-wrap">
+          <iframe src="https://player.vimeo.com/video/1185096105?title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479" 
+                  frameborder="0" 
+                  allow="autoplay; fullscreen; picture-in-picture; clipboard-write" 
+                  style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                  title="Janloyd Visual Showreel">
+          </iframe>
         </div>
       </div>
-
     </div>
   </div>
 </section>
 
-<section id="work" style="background:#161814;padding:5rem 4rem">
+<section id="work" style="background:#161814; padding:5rem 4rem">
   <div class="section-label">Signature Grade</div>
   <h2 class="section-title">The <em>Transformation</em></h2>
   <p style="font-size:.9rem;color:var(--text-muted);max-width:480px;margin-bottom:3rem;line-height:1.8">Transforming flat log profiles into high-contrast cinematic narratives — the Nordic Luxury palette in action.</p>
+  
   <div class="ba-grid reveal">
     <div class="ba-card">
       <div class="ba-img-wrap">
         <div class="img-placeholder">
-          <span class="img-placeholder-label">YOUR BEFORE IMAGE</span>
+          <span class="img-placeholder-label">BEFORE IMAGE</span>
           <span class="img-placeholder-sub">Unprocessed Log Footage</span>
         </div>
       </div>
@@ -869,7 +702,7 @@
     <div class="ba-card">
       <div class="ba-img-wrap">
         <div class="img-placeholder after-placeholder">
-          <span class="img-placeholder-label">YOUR AFTER IMAGE</span>
+          <span class="img-placeholder-label">AFTER IMAGE</span>
           <span class="img-placeholder-sub">Nordic Luxury Grade Applied</span>
         </div>
       </div>
@@ -878,46 +711,39 @@
   </div>
 </section>
 
-<section id="gallery" style="background:#0d0e0c;padding:5rem 4rem">
+<section id="gallery" style="background:#0d0e0c; padding:5rem 4rem">
   <div class="section-label">Portfolio</div>
   <h2 class="section-title">Selected <em>Works</em></h2>
-  <p style="font-size:.9rem;color:var(--text-muted);max-width:480px;margin-bottom:3rem;line-height:1.8">High-end cinematic content crafted for real estate listings worldwide.</p>
-  
- <div class="gallery-grid reveal">
+  <div class="gallery-grid reveal">
     <div class="gallery-item tall">
       <div class="img-placeholder gal-placeholder">
-        <span class="img-placeholder-label">Your Best Shot</span>
-        <span class="img-placeholder-sub">Property exterior / hero shot</span>
+        <span class="img-placeholder-label">Exterior Hero</span>
       </div>
     </div>
     <div class="gallery-item">
       <div class="img-placeholder gal-placeholder">
-        <span class="img-placeholder-label">Interior Reel Still</span>
-        <span class="img-placeholder-sub">Living room / kitchen</span>
+        <span class="img-placeholder-label">Interior Detail</span>
       </div>
     </div>
     <div class="gallery-item">
       <div class="img-placeholder gal-placeholder">
-        <span class="img-placeholder-label">Color Grade Sample</span>
-        <span class="img-placeholder-sub">Before vs After frame</span>
+        <span class="img-placeholder-label">Kitchen POV</span>
       </div>
     </div>
     <div class="gallery-item">
       <div class="img-placeholder gal-placeholder">
-        <span class="img-placeholder-label">Luxury Interior</span>
-        <span class="img-placeholder-sub">Bedroom / bathroom</span>
+        <span class="img-placeholder-label">Architecture</span>
       </div>
     </div>
     <div class="gallery-item">
       <div class="img-placeholder gal-placeholder">
-        <span class="img-placeholder-label">Aerial / Exterior</span>
-        <span class="img-placeholder-sub">Property overview</span>
+        <span class="img-placeholder-label">Living Space</span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="about" style="background:var(--bg2);">
+<section id="about" class="about">
   <div class="section-label">About</div>
   <h2 class="section-title">The <em>specialist</em><br>agencies can't replace</h2>
   <div class="about-grid">
@@ -926,9 +752,8 @@
         "True luxury isn't found in flashy transitions and visual noise — it lives in the quiet details that define a sanctuary."
       </blockquote>
       <div class="about-body">
-        <p>I'm Janloyd Tupas, a cinematic visual curator based in the Philippines, working with real estate agents and agencies worldwide. My background in Marine Engineering gave me a precision-first mindset — I approach every edit with the same discipline as a technical blueprint.</p>
-        <p>Under <strong>@janloyd.visual</strong>, I specialize in Minimalist Cinematic and Quiet Luxury post-production, engineered specifically for the real estate market. Every node, every grade, every audio layer is intentional — designed to elevate a property from listing to landmark.</p>
-        <p>I work as a dedicated remote specialist — which means you get agency-level fidelity with boutique-level focus, faster turnaround, and a curator who treats your brand as their own.</p>
+        <p>I'm Janloyd Tupas, a cinematic visual curator based in the Philippines, working with high-end real estate markets in the US, UK, and Australia.</p>
+        <p>Under <strong>@janloyd.visual</strong>, I specialize in Minimalist Cinematic and Quiet Luxury post-production. Every node, every grade, every audio layer is intentional — designed to elevate a property from listing to landmark.</p>
       </div>
     </div>
     <div class="about-stats reveal">
@@ -956,92 +781,45 @@
   <div class="section-label">Investment</div>
   <h2 class="section-title">Partnership<br><em>Packages</em></h2>
   <div class="services-grid reveal">
-
     <div class="service-card">
       <div class="service-name">Package 01</div>
       <div class="service-title">The Social Starter</div>
       <div class="service-price">$150</div>
       <div class="service-price-note">AUD · Per Video</div>
       <div class="service-divider"></div>
-      <div class="service-deliverable">1× Cinematic Vertical Reel (30–60 seconds)</div>
       <ul class="service-includes">
-        <li>Signature color grading</li>
-        <li>Trending audio selection</li>
-        <li>1 round of revisions</li>
-        <li>Optimized for Instagram & TikTok</li>
+        <li>1x Cinematic Vertical Reel</li>
+        <li>Signature Color Grade</li>
+        <li>Immersive Sound Design</li>
       </ul>
       <div class="turnaround">Turnaround: <span>24–48 hours</span></div>
     </div>
-
     <div class="service-card featured">
       <div class="service-name">Package 02</div>
       <div class="service-title">The Listing Hero</div>
       <div class="service-price">$350</div>
-      <div class="service-price-note">AUD · Standard Project</div>
+      <div class="service-price-note">AUD · Per Listing</div>
       <div class="service-divider"></div>
-      <div class="service-deliverable">1× Cinematic Horizontal Walkthrough (2–3 min) + 1× High-Energy Vertical Teaser Reel</div>
       <ul class="service-includes">
-        <li>Advanced color grading</li>
-        <li>Immersive sound design & SFX</li>
-        <li>Property stat text overlays</li>
-        <li>Optimized for YouTube & socials</li>
+        <li>1x Full Cinematic Film</li>
+        <li>1x Teaser Reel</li>
+        <li>4K High-End Delivery</li>
       </ul>
       <div class="turnaround">Turnaround: <span>48–72 hours</span></div>
     </div>
-
     <div class="service-card">
       <div class="service-name">Package 03</div>
-      <div class="service-title">The Growth Partner</div>
+      <div class="service-title">Retainer Partner</div>
       <div class="service-price">$600</div>
-      <div class="service-price-note">AUD · Monthly Retainer</div>
+      <div class="service-price-note">AUD · Monthly</div>
       <div class="service-divider"></div>
-      <div class="service-deliverable">4× Cinematic Reels per month (1 per week) — dedicated curator, priority scheduling</div>
       <ul class="service-includes">
-        <li>All Listing Hero features</li>
-        <li>Priority editing queue</li>
-        <li>Reels/Shorts in 24 hours</li>
-        <li>Full listing films in 48 hours</li>
-        <li>Dedicated brand consistency</li>
+        <li>4x Dedicated Reels</li>
+        <li>Priority Queue</li>
+        <li>Consistent Brand Curation</li>
       </ul>
-      <div class="turnaround">Turnaround: <span>Priority — 24h Reels / 48h Films</span></div>
+      <div class="turnaround">Turnaround: <span>Priority Delivery</span></div>
     </div>
-
-  </div>
-</section>
-
-<section class="scope" id="scope">
-  <div class="section-label">What I Deliver</div>
-  <h2 class="section-title">Scope of<br><em>Craft</em></h2>
-  <div class="scope-grid">
-    <div class="scope-item reveal">
-      <div class="scope-num">01</div>
-      <div class="scope-title">Advanced Color Grading</div>
-      <div class="scope-body">Implementation of a "Nordic Luxury" palette — clean whites, neutralized yellow light contamination, and preserved exterior dynamic range. Transforming flat log profiles into high-contrast cinematic narratives using advanced node structures and custom LUTs in DaVinci Resolve.</div>
-    </div>
-    <div class="scope-item reveal">
-      <div class="scope-num">02</div>
-      <div class="scope-title">Immersive Sound Design</div>
-      <div class="scope-body">Tactile audio engineering that enhances the perceived weight of materials — marble, glass, hardwood. Atmospheric reverb creates a sense of space and breathability in large architectural rooms. Every sonic layer is curated to match the visual luxury of the property.</div>
-    </div>
-    <div class="scope-item reveal">
-      <div class="scope-num">03</div>
-      <div class="scope-title">Omni-Channel Optimization</div>
-      <div class="scope-body">The Cinematic Feature: 4K horizontal for YouTube and high-end presentations. The High-Velocity Reel: 9:16 vertical edits engineered for Instagram and TikTok engagement. Plus custom-graded hero stills for maximum click-through on listing thumbnails.</div>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="section-label">Tools & Technology</div>
-  <h2 class="section-title">Crafted with<br><em>Precision</em></h2>
-  <div class="tools-row reveal">
-    <span class="tool-tag">DaVinci Resolve</span>
-    <span class="tool-tag">Custom LUT Development</span>
-    <span class="tool-tag">Advanced Node Structures</span>
-    <span class="tool-tag">Epidemic Sound</span>
-    <span class="tool-tag">Kling AI</span>
-    <span class="tool-tag">Canva</span>
-    <span class="tool-tag">Notion</span>
   </div>
 </section>
 
@@ -1051,21 +829,18 @@
   <div class="process-steps reveal">
     <div class="process-step">
       <div class="step-dot"></div>
-      <div class="step-num">Step 01</div>
       <div class="step-title">Creative Discovery</div>
-      <div class="step-body">Share your property details, target buyer persona, and brand direction. We identify the property's unique narrative and develop a bespoke visual strategy tailored to your market.</div>
+      <div class="step-body">Share your property brief and target persona. We define the narrative strategy.</div>
     </div>
     <div class="process-step">
       <div class="step-dot"></div>
-      <div class="step-num">Step 02</div>
       <div class="step-title">Master Curation</div>
-      <div class="step-body">Advanced 4K post-production begins — custom grading, immersive sound design, and precision editing. Your slot is locked in the production calendar with guaranteed delivery timing.</div>
+      <div class="step-body">Post-production begins: cinematic grading, SFX, and precision cuts.</div>
     </div>
     <div class="process-step">
       <div class="step-dot"></div>
-      <div class="step-num">Step 03</div>
       <div class="step-title">Final Delivery</div>
-      <div class="step-body">Receive cinema-grade 4K files and optimized social assets via private link. High-velocity assets ready for both internal presentations and global social reach — zero compromise.</div>
+      <div class="step-body">Receive high-end 4K assets via private link, ready for global reach.</div>
     </div>
   </div>
 </section>
@@ -1073,22 +848,17 @@
 <section class="cta-section" id="contact">
   <div class="cta-eyebrow">Ready to Elevate Your Next Listing?</div>
   <h2 class="cta-title">Let's Build<br>Something <em>Iconic.</em></h2>
-  <p class="cta-sub">One property. One story. One curator dedicated to making it unforgettable.</p>
   <div class="cta-actions">
     <a href="https://calendly.com/janloyd-visual/30min" target="_blank" class="btn-primary">Schedule a Discovery Call</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7TaldLf36_a3v78ID9AKugyLFPOR-aOlVdURETczZSa-BDw/viewform" target="_blank" class="btn-ghost">Submit Project Brief</a>
   </div>
   <div class="cta-contact">
     <div class="contact-item">
-      <div class="contact-label">Email</div>
       <a href="mailto:janloyd.visual@gmail.com">janloyd.visual@gmail.com</a>
     </div>
     <div class="contact-item">
-      <div class="contact-label">WhatsApp</div>
       <a href="https://wa.me/639630350999" target="_blank">+63 963 035 0999</a>
     </div>
     <div class="contact-item">
-      <div class="contact-label">Instagram</div>
       <a href="https://www.instagram.com/janloyd.visuals/" target="_blank">@janloyd.visuals</a>
     </div>
   </div>
@@ -1096,7 +866,7 @@
 
 <footer>
   <div class="footer-logo">JANLOYD<span>.</span>VISUAL</div>
-  <div class="footer-right">© 2025 Janloyd Visual · Sara, Iloilo, Philippines · Serving clients worldwide</div>
+  <div class="footer-right">© 2025 Janloyd Visual · Philippines · Serving clients worldwide</div>
 </footer>
 
 <script>
@@ -1108,7 +878,7 @@
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 </script>
 
